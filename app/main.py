@@ -19,3 +19,21 @@ def min_max_search(arr):
         max_value = max(max_value1, max_value2)
         return (min_value, max_value)
     
+def quick_select(arr, k):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+
+    left_len = len(left)
+
+    if left_len > k:
+        return quick_select(left, k)    
+    if left_len + 1 < k:
+        return quick_select(right, k-left_len-1)
+    if left_len == k:
+        return max(left)
+    if left_len + 1 == k:
+        return middle[0]

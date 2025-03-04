@@ -19,6 +19,9 @@ For our case is:
 
 ### the time complexity is O(n)
 
+## Task 2. Finding the k-th smallest element
+Implement an algorithm for finding the k-th smallest element in an unsorted array using the Quick Select principle.
+
 ## Run test
 ```bash
 python -m unittest .\tests\testFunc.py
